@@ -84,4 +84,3 @@ Ethernet frame:
 ### 8. Physical Layer
 The frame is converted to **bits** and sent over the medium (wired or Wi-Fi radio signals).
 ```
-
