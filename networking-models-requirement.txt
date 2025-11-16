@@ -1,0 +1,1 @@
+Networking models provide a standard. They define how devices in a network should communicate with each other, in what format to send data etc. Therefore, devices made by different companies like Apple and Cisco are compatible with each other.
