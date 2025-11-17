@@ -1,6 +1,6 @@
 ## What happens at the Data Link and Network Layer when you click a new link (https://www.wikipedia.org)?
 
-When you click a new link, your device must start a new connection. At the **Data Link Layer**, it creates an Ethernet frame:
+The Network Layer resolves the ip address of wikipedia through DNS and creates a L3 header consisting of its own IP address and the wikipedia IP address. At the **Data Link Layer**, it creates an Ethernet frame:
 
 - **Source MAC:** your device’s MAC  
 - **Destination MAC:** your router’s MAC  
