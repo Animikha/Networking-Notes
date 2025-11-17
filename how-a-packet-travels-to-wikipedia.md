@@ -1,4 +1,4 @@
-## What happens at the Data Link Layer when you click a new link (https://www.wikipedia.org)?
+## What happens at the Data Link and Network Layer when you click a new link (https://www.wikipedia.org)?
 
 When you click a new link, your device must start a new connection. At the **Data Link Layer**, it creates an Ethernet frame:
 
