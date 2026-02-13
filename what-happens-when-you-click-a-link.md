@@ -1,4 +1,4 @@
-## Scenario: Clicking a new link (https://www.wikipedia.org) when Google.com is already open  
+## Scenario: Clicking a link (https://www.wikipedia.org) in browser  
 What happens next?
 
 ### 1. HTTPS Check → TLS Handshake
