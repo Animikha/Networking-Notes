@@ -1,4 +1,4 @@
-# My Idea of HTTPS / SSL (Basics)
+# My Idea of HTTPS / TLS (Basics)
 
 ## HTTP 
 
@@ -42,4 +42,31 @@ HTTP also does not provide strong uthenication of the sserver's identity
 ## HTTPS
 HTTPS stands for **HyperText Transfer Protocol Secure**
 
-It is esse
+It is essentially:
+> HTTP runnning over TLS (Transport Layer Security)
+
+People often say "SSL", but moderm HTTPS actually uses **TLS**. SSL is the older, deprecated version.
+
+HTTPS provides:
+1. Encryption
+2. Authentication
+3. Integrity
+
+---
+
+## TLS Certificates
+HTTPS uses TLS certificates to verify the identity of the server.
+
+A TLS certificate contains:
+- the domain name
+- the server's public key
+- certificate issuer information
+- validity/expiry dates
+- a digital signature from a trusted Certificate Authority (CA)
+
+Examples of Certificate Authorities:
+- Digicert
+- Let's Encrypt
+
+
+
