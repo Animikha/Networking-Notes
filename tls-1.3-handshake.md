@@ -66,7 +66,7 @@ SERV_EPH_PRIV
 SERV_EPH_PUB
 ```
 
-These are temporary Diffie-hellman keys
+These are temporary Diffie-Hellman keys
 
 They are deleted after the session ends
 
@@ -75,11 +75,95 @@ They are deleted after the session ends
 # Step 1 - Browser Connects
 
 User visits:
+
 ```text
 https://example.com
 ```
 
 Browser sends:
+
+```text
+ClientHello
+```
+containing:
+- supported TLS versions
+- supported cipher suites
+- random values
+- 'BROW_EPH_PUB`
+
+This public ephemeral value is safe to send openly
+
+---
+
+# Step 2 - Server Responds
+Server sends:
+
+```text
+ServerHello
+```
+containing:
+
+---
+## A. Certificate
+Certificate contains:
+
+ ```text
+- domain: example.com
+- SERV_PUB
+- issuer: DigiCert
+- validity dates
+- DigiCert signature
+```
+
+Meaning:
+
+```text
+"DigiCert confirms this publiec key belongs to example.com"
+```
+
+## B. Server's Emphemeral Public Key
+
+Server sends:
+
+```text
+SERV_EPH_PUB
+```
+for Diffie-Hellman's shared secret derivation
+
+---
+
+## C. Server's Signature
+
+Server signs handshake data using:
+
+```text
+SERV_PRIV
+```
+
+Browser later verifies this using:
+
+```text
+SERV_PUB
+```
+This proves:
+
+```text
+The emphemeral key genuinely came from example.com"
+```
+
+Without this signature:
+Attacker could replace Server's ephemeral key with their own
+
+---
+
+# Step 3 - Browser Verifies Identity
+
+Browser now checks:
+
+
+
+
+
 
 
 
