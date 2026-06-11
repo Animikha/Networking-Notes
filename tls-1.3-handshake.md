@@ -103,7 +103,7 @@ ServerHello
 ```
 containing:
 
----
+
 ## A. Certificate
 Certificate contains:
 
@@ -130,7 +130,6 @@ SERV_EPH_PUB
 ```
 for Diffie-Hellman's shared secret derivation
 
----
 
 ## C. Server's Signature
 
@@ -148,7 +147,7 @@ SERV_PUB
 This proves:
 
 ```text
-The emphemeral key genuinely came from example.com"
+The emphemeral key genuinely came from example.com
 ```
 
 Without this signature:
@@ -159,6 +158,148 @@ Attacker could replace Server's ephemeral key with their own
 # Step 3 - Browser Verifies Identity
 
 Browser now checks:
+
+## A. DigiCert Signature
+
+Using:
+
+```text
+DC_PUB
+```
+browser verifies DigiVert's signature o the certificate
+
+If valid
+
+```text
+Certificate really came from DigiCert
+```
+
+
+### B. Domain Name
+
+Browser checks:
+
+```text
+Requested domain = example.com
+Certificate domain = example.com
+```
+Must match
+
+
+### C. Certificate Validity
+
+Browser checks:
+
+- not expired
+- not revoked
+- properly formatted
+
+### D. Server's Handshake Signature
+
+Using:
+
+```text
+SERV_PUB
+```
+
+Browser verifies Server's handshake signature
+
+This proves:
+
+```text
+Server really owns SERV_PRIV
+```
+
+At this point browser trusts:
+
+```text
+"I am talking to the real example.com"
+```
+---
+
+# Important Point
+
+These private keys NEVER travel across network:
+
+```text
+DC_PRIV
+SERV_PRIV
+BROW_EPH_PRIV
+SERV_EPH_PRIV
+```
+
+They always remain secret
+
+---
+
+# Step 4 - Shared Session Key is Derived
+
+This is the coe Diffie-Hellman step
+
+The actual:
+
+```text
+SESSION_KEY
+```
+
+is never transmitted over the network
+
+Instead BOTH sides independently derive the same key
+
+## Browser Computes 
+
+Using:
+```text
+BROW_EPH_PRIV
++
+SERV_EPH_PUB
+```
+
+browser derives:
+
+```text
+SESSION_KEY
+```
+
+## Server Computes
+
+Using:
+
+```text
+SERV_EPH_PRIV
++
+BROW_EPH_PUB
+```
+
+server derives:
+
+```text
+SESSION_KEY
+```
+
+Due to Diffie-Hellman mathematics:
+
+```text
+both derive identical SESSION_KEY
+```
+
+without ever sending it across the network
+
+---
+
+# What Attacker can see
+
+```text
+
+```
+
+
+
+
+
+
+
+
 
 
 
