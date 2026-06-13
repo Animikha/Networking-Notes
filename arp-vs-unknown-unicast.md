@@ -41,5 +41,5 @@ Only PC2 finds a match and replies with an ARP Reply:
 - **Source MAC:** PC2’s MAC  
 - **Destination MAC:** PC1’s MAC  
 
-PC1 receives this ARP reply, lerans PC2’s MAC address and stores it in ARP cache, and can now send unicast frames directly to PC2.
+PC1 receives this ARP reply, learns PC2’s MAC address and stores it in ARP cache, and can now send unicast frames directly to PC2.
 
