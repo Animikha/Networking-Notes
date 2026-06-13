@@ -54,7 +54,7 @@ DC_PRIV
 
 ---
 
-### Temporary Ephemeral Keys (Per Connection)
+## 3. Temporary Ephemeral Keys (Per Connection)
 
 For THIS session only:
 
@@ -107,7 +107,7 @@ containing:
 ## A. Certificate
 Certificate contains:
 
- ```text
+```text
 - domain: example.com
 - SERV_PUB
 - issuer: DigiCert
@@ -118,7 +118,7 @@ Certificate contains:
 Meaning:
 
 ```text
-"DigiCert confirms this publiec key belongs to example.com"
+"DigiCert confirms this public key belongs to example.com"
 ```
 
 ## B. Server's Emphemeral Public Key
@@ -166,7 +166,7 @@ Using:
 ```text
 DC_PUB
 ```
-browser verifies DigiVert's signature o the certificate
+browser verifies DigiVert's signature of the certificate
 
 If valid
 
@@ -234,7 +234,7 @@ They always remain secret
 
 # Step 4 - Shared Session Key is Derived
 
-This is the coe Diffie-Hellman step
+This is the core Diffie-Hellman step
 
 The actual:
 
