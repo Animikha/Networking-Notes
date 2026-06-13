@@ -27,7 +27,7 @@ HTTP traffic is not encrypted.
 This means data is transmitted in plaintext.
 
 Althouh all network communication ultimately travels as binary data (bits), the 
-contents are still readable as they ae not encrypted. Tools like packet sniffers
+contents are still readable as they are not encrypted. Tools like packet sniffers
 can reconstruct and read the original conversation.
 
 Because of this:
@@ -36,7 +36,7 @@ Because of this:
 - data can be modified in transit
 - websites can be potentially impersonated
 
-HTTP also does not provide strong uthenication of the sserver's identity
+HTTP also does not provide strong authenication of the server's identity
 
 
 ## HTTPS
